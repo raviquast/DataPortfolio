@@ -1,6 +1,6 @@
 # Ravi Quast – Data Portfolio
 
-**Senior Data Analyst | Systems Engineer | Dashboard Magician | Cloud Enthusiast**
+**Senior Data Analyst | Data Scientist | Data Engineer | Consultant | Systems Engineer**
 
 Welcome! This is a collection of selected analytics and data science projects showcasing my skills across dashboarding, data engineering, machine learning, and storytelling.
 
