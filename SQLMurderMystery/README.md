@@ -12,8 +12,8 @@ WITH CSR AS(
       crime_scene_report AS CSR
   WHERE
       date = 20180115
-      AND type LIKE 'murder'
-      AND city LIKE 'SQL City'
+      AND type LIKE '%murder%'
+      AND city LIKE '%SQL City%'
 ),
 
 WITNESSES AS(
@@ -29,9 +29,9 @@ WITNESSES AS(
             FROM 
               person
             WHERE
-              address_street_name LIKE 'Northwestern Dr'
+              address_street_name LIKE '%Northwestern Dr%'
         )
-      OR (address_street_name LIKE 'Franklin Ave'
+      OR (address_street_name LIKE '%Franklin Ave%'
       AND name LIKE 'Annabel%')
       
     ORDER BY
