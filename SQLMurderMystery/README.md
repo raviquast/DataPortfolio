@@ -2,7 +2,7 @@
 
 ## SQL Code
 
-[SQL Code](./SQLMurderMystery/Solution.sql):
+[SQL Code](./SQLMurderMystery/code/Solution.sql):
 ~~~~sql
 WITH CSR AS(
   SELECT
@@ -118,10 +118,10 @@ FROM
 ~~~~
 
 ## Output
-![app-token](solution.png)
+![app-token](images/solution.png)
   
 ## Feedback
-![app-token](feedback.png)
+![app-token](images/feedback.png)
 
 
               
