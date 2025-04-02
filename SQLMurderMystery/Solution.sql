@@ -8,26 +8,29 @@ WITH CSR AS(
   		AND type LIKE 'murder'
   		AND city LIKE 'SQL City'
 ),
+	
 WITNESSES AS(
 	SELECT
   		*
   	FROM
   		person
   	WHERE
-  		address_number = (
-		  					SELECT 
-		  						MAX(address_number) 
-		  					FROM 
-		  						person
-							WHERE
-		  						address_street_name LIKE 'Northwestern Dr'
-						)
+  		address_number = 
+			(
+				SELECT 
+					MAX(address_number) 
+				FROM 
+					person
+				WHERE
+					address_street_name LIKE 'Northwestern Dr'
+			)
   		OR (address_street_name LIKE 'Franklin Ave'
 			AND name LIKE 'Annabel%')
   		
   	ORDER BY
   		address_street_name
 ),
+	
 INTERVIEWS AS (
 	SELECT
   		*
@@ -36,6 +39,7 @@ INTERVIEWS AS (
   	JOIN WITNESSES ON WITNESSES.id = I.person_id
   	
 ),
+	
 SUSPECTS AS (
 	SELECT
   		M.person_id AS person_id
@@ -47,6 +51,7 @@ SUSPECTS AS (
   		AND membership_id LIKE '48Z%'
   	
 ),
+	
 MURDERER AS (
 	SELECT
   		P.name AS name
@@ -56,6 +61,7 @@ MURDERER AS (
   	JOIN SUSPECTS AS S ON S.person_id = P.id
   	JOIN drivers_license AS DL ON P.license_id = DL.id
 ),
+	
 MURDERER_INTERVIEW AS (
 	SELECT
 		*
@@ -64,6 +70,7 @@ MURDERER_INTERVIEW AS (
 	WHERE
 		interview.person_id = (SELECT person_id FROM MURDERER)
 ),
+	
 HIRING_SUSPECTS AS (
 	SELECT
   		P.id AS person_id
@@ -79,6 +86,7 @@ HIRING_SUSPECTS AS (
   		AND DL.car_model LIKE '%Model S%'
   	
 ),
+	
 HIRING_BITCH AS (
 	SELECT
   		FB.person_id AS person_id
