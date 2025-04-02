@@ -1,4 +1,5 @@
 # Solution to exercise presented at https://mystery.knightlab.com/
+![app-token](images/SQLMurderMystery.png)
 
 ## SQL Code
 
